@@ -1,17 +1,15 @@
 ﻿#include <iostream>
 #include <string>
 
-void printMessage(std::string message, int& error) {
+int printMessage(std::string message, std::string author) {
     if (message.length() == 0) {
-        error = 1;
-        std::cout << "Message can not be empty!" << std::endl;
-        return;
+        return 1;
     }
 
+    std::cout << "[" << author << "]: ";
     std::cout << message << std::endl;
-    error = 0;
+    return 0;
 }
 int main() {
-    int error = 0;
-    printMessage("A simple Git course", error);
+    int error = printMessage("A simple Git course", "nnminh");
 }
